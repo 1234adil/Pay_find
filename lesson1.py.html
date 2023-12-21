@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>lesson1.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #6897bb;}
+.s4 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+lesson1.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># Write a program to prompt the user for hours and rate per hour using input to compute gross pay.</span>
+<span class="s0"># Pay should be the normal rate for hours up to 40 and time-and-a-half for the hourly rate for all hours worked above 40 hours.</span>
+<span class="s0"># Put the logic to do the computation of pay in a function called computepay() and use the function to do the computation.</span>
+<span class="s0"># The function should return a value. Use 45 hours and a rate of 10.50 per hour to test the program (the pay should be 498.75).\</span>
+<span class="s0"># You should use input to read a string and float() to convert the string to a number. Do not worry about error checking</span>
+<span class="s0"># the user input unless you want to - you can assume the user types numbers properly.</span>
+<span class="s0"># Do not name your variable sum or use the sum() function.</span>
+
+<span class="s2">def </span><span class="s1">computepay(hours</span><span class="s2">, </span><span class="s1">rate):</span>
+    <span class="s2">if </span><span class="s1">hours &lt;= </span><span class="s3">40</span><span class="s1">:</span>
+        <span class="s1">pay = hours * rate</span>
+    <span class="s2">else</span><span class="s1">:</span>
+        <span class="s1">pay = </span><span class="s3">40 </span><span class="s1">* rate + (hours - </span><span class="s3">40</span><span class="s1">) * </span><span class="s3">1.5 </span><span class="s1">* rate</span>
+    <span class="s2">return </span><span class="s1">pay</span>
+
+<span class="s0"># Prompt user for input</span>
+<span class="s1">hours_input = input(</span><span class="s4">&quot;Enter hours worked: &quot;</span><span class="s1">)</span>
+<span class="s1">rate_input = input(</span><span class="s4">&quot;Enter rate per hour: &quot;</span><span class="s1">)</span>
+
+<span class="s0"># Convert input to numeric values</span>
+<span class="s2">try</span><span class="s1">:</span>
+    <span class="s1">hours = float(hours_input)</span>
+    <span class="s1">rate = float(rate_input)</span>
+<span class="s2">except </span><span class="s1">ValueError:</span>
+    <span class="s1">print(</span><span class="s4">&quot;Error: Please enter numeric values for hours and rate.&quot;</span><span class="s1">)</span>
+    <span class="s1">exit()</span>
+
+<span class="s0"># Calculate and print gross pay using the computepay function</span>
+<span class="s1">gross_pay = computepay(hours</span><span class="s2">, </span><span class="s1">rate)</span>
+<span class="s1">print(</span><span class="s4">f&quot;Pay </span><span class="s2">{</span><span class="s1">gross_pay</span><span class="s2">}</span><span class="s4">&quot;</span><span class="s1">)</span></pre>
+</body>
+</html>
